@@ -63,7 +63,7 @@ class PinLogin {
 
     _attemptLogin() {
         if (this.value.length > 0) {
-            fetch("https://github.com/jeeveshgangw/Pin/blob/master/login.php", {
+            fetch(this.loginEndpoint, {
                 method: "post",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
