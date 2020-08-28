@@ -70,7 +70,11 @@ class PinLogin {
                 },
                 body: `pincode=${this.value}`
             }).then(response => {
-               console.log(response.status);
+                if (response.status === 200) {
+                    window.location.href = this.redirectTo;
+                } else {
+                    this.el.textDisplay.classList.add("pin-login__text--error");
+                }
             })
         }
     }
